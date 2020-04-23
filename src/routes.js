@@ -7,8 +7,8 @@ import NewDoc from './pages/NewDoc';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/" exact component={Home}/>
-      <Route path="new-document" component={NewDoc}/>
+      <Route path="/" exact component={Home} />
+      <Route path="new-document" component={NewDoc} />
     </Switch>
   );
 }
