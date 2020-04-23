@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   margin-top: 20px;
   position: relative;
-  height: 650px;
+  height: 80vh;
   background: #fff;
 `;
 
@@ -50,7 +50,7 @@ export const Item = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #eee;
+  border: 1px solid #818387;
   border-radius: 4px;
   margin: 20px 0;
   padding: 20px;
@@ -78,6 +78,7 @@ export const LoadMore = styled.div`
     border: 0;
     color: #145e43;
     text-decoration: underline;
+    margin-bottom: 5px;
   }
   p {
     color: #222;
