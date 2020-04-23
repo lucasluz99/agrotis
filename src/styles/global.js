@@ -12,16 +12,15 @@ export default createGlobalStyle`
   }
 
 
+  body {
+    background #eee;
+  }
   body,input,button {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
   }
 
-  #root {
-    max-width: 1020px;
-    margin:0 auto;
-    padding: 0 20px 50px;
-  }
+
 
   button {
     cursor: pointer;

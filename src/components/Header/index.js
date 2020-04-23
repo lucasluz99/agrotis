@@ -1,9 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Agrotis from '../../assets/images/agrotis.png';
+
+import { Container } from './styles';
 
 export default function Header() {
   return (
-    <div />
+    <Container>
+      <img src={Agrotis} alt="Logotipo da Agrotis" />
+    </Container>
   );
 }
