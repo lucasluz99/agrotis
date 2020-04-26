@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { MdSearch } from 'react-icons/md';
 import { FaPlus } from 'react-icons/fa';
 
-import NewDoc from '../NewDoc';
-
 import SearchFilter from '../../components/SearchFilter';
 
 import Wrapper from '../../components/Wrapper';
@@ -20,28 +18,41 @@ import {
 } from './styles';
 
 export default function Home() {
-  const [filter, setFilter] = useState('');
   const [docs, setDocs] = useState([
     {
       name: 'Andamento',
-      description: 'Quando o contrata está em andamento e pode ser alterado',
+      description: 'Quando o contrato está em andamento e pode ser alterado',
+    },
+    {
+      name: 'Finalizado',
+      description: 'Quando o contrato foi atendido e não pode ser modificado',
     },
   ]);
-  const [filterDocs, setFilterDocs] = useState([]);
+  const [isFilter, setIsFilter] = useState(false);
+
+  const [filteredDocs, setFilteredDocs] = useState([]);
+
+  function filterDocs(value) {
+    setFilteredDocs(
+      docs.filter((doc) => doc.name.toLowerCase().includes(value.toLowerCase()))
+    );
+  }
+
   return (
     <Wrapper>
       <Container>
         <Header>
           <p>Situações do documento</p>
           <SearchFilter
-            filter={filter}
+            filter={filterDocs}
+            setIsFilter={setIsFilter}
             icon="search"
-            placeholder="Pesquise por texto"
+            placeholder="Pesquise por nome"
             iconColor="#222"
           />
         </Header>
         <List>
-          {filter === ''
+          {!isFilter
             ? docs.map((doc, i) => (
                 <Item key={i}>
                   <div>
@@ -55,7 +66,7 @@ export default function Home() {
                   </div>
                 </Item>
               ))
-            : filterDocs.map((doc, i) => (
+            : filteredDocs.map((doc, i) => (
                 <Item key={i}>
                   <div>
                     <h1>Nome:</h1>
@@ -73,7 +84,7 @@ export default function Home() {
           <button type="button">Carregar mais</button>
           <p>(2 - 10)</p>
         </LoadMore>
-        <AddNewDoc title="Adicionar novo status" to={NewDoc}>
+        <AddNewDoc title="Adicionar novo status" to="/new-document">
           <FaPlus size={40} color="#fff" />
         </AddNewDoc>
       </Container>

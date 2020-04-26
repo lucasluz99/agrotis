@@ -4,13 +4,16 @@ import Icons from './icons';
 import { Container } from './styles';
 
 function SearchFilter({
-  data,
   filter,
   icon,
   placeholder = '',
   iconColor = '',
+  setIsFilter,
 }) {
-  const [value, setValue] = useState('');
+  function toFilter(value) {
+    setIsFilter(value !== '');
+    filter(value);
+  }
 
   const Icon = Icons[icon];
   return (
@@ -18,11 +21,11 @@ function SearchFilter({
       <input
         type="text"
         placeholder={placeholder}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => toFilter(e.target.value)}
       />
       <Icon size={30} color={iconColor} />
     </Container>
   );
 }
 
-export default memo(SearchFilter);
+export default SearchFilter;
