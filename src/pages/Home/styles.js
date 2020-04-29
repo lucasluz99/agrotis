@@ -25,7 +25,7 @@ export const List = styled.ul`
   padding: 20px;
   list-style: none;
   overflow-y: scroll;
-  height: 70vh;
+  height: 68vh;
 `;
 
 export const Item = styled.li`
