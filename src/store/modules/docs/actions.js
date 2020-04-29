@@ -4,3 +4,9 @@ export function addDoc(payload) {
     payload,
   };
 }
+export function filterDocs(payload) {
+  return {
+    type: '@docs/FILTER',
+    payload,
+  };
+}

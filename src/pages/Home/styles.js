@@ -21,10 +21,11 @@ export const Header = styled.header`
   }
 `;
 
-
 export const List = styled.ul`
   padding: 20px;
   list-style: none;
+  overflow-y: scroll;
+  height: 70vh;
 `;
 
 export const Item = styled.li`

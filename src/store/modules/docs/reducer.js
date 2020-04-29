@@ -8,14 +8,43 @@ const INITIAL_STATE = {
       name: 'Finalizado',
       description: 'Quando o contrato foi atendido e não pode ser modificado',
     },
+    {
+      name: 'Finalizado',
+      description: 'Quando o contrato foi atendido e não pode ser modificado',
+    },
+    {
+      name: 'Finalizado',
+      description: 'Quando o contrato foi atendido e não pode ser modificado',
+    },
+    {
+      name: 'Andamento',
+      description: 'Quando o contrato está em andamento e pode ser alterado',
+    },
+    {
+      name: 'Finalizado',
+      description: 'Quando o contrato foi atendido e não pode ser modificado',
+    },
+    {
+      name: 'Finalizado',
+      description: 'Quando o contrato foi atendido e não pode ser modificado',
+    },
+    {
+      name: 'Finalizado',
+      description: 'Quando o contrato foi atendido e não pode ser modificado',
+    },
   ],
-  filtredDocs: [],
+  filter: '',
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case '@docs/ADD':
       return { ...state, data: [...state.data, action.paylaod] };
+    case '@docs/FILTER':
+      return {
+        ...state,
+        filter: action.payload,
+      };
     default:
       return state;
   }
