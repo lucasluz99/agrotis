@@ -39,7 +39,13 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case '@docs/ADD':
-      return { ...state, data: [...state.data, action.paylaod] };
+      return {
+        filter: '',
+        docs: [
+          ...state.docs,
+          { name: action.name, description: action.description },
+        ],
+      };
     case '@docs/FILTER':
       return {
         ...state,

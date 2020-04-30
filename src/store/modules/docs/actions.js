@@ -1,7 +1,7 @@
 export function addDoc(payload) {
   return {
     type: '@docs/ADD',
-    payload,
+    ...payload,
   };
 }
 export function filterDocs(payload) {
