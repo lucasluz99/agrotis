@@ -13,7 +13,7 @@ import { Container, Header, Actions } from './styles';
 
 export default function NewDoc() {
   const dispatch = useDispatch();
-  const docs = useSelector((state) => state.docs.docs);
+
   const schema = Yup.object().shape({
     name: Yup.string().required('Nome é Obrigatório'),
     description: Yup.string().required('Email é Obrigatório'),
